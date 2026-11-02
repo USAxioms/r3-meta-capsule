@@ -1,0 +1,13 @@
+{
+  "admitted_gaps": {},
+  "equivalents": {
+    "src/stats.py@63:44": "'d > 0' vs 'd >= 0' over nz. nz is constructed by filtering out every zero difference, so d == 0 does not occur in the iteration. Extensionally equal, and the filter is asserted at the call site.",
+    "src/wad18.py@107:13": "Same argument in div: a zero numerator gives a zero quotient, and -0 == 0.",
+    "src/wad18.py@107:24": "Same as above, the other operand.",
+    "src/wad18.py@57:11": "'den < 0' vs 'den <= 0' in from_ratio. The two differ only at den == 0, and at den == 0 both paths reach round_half_even with a zero denominator, which raises. Extensionally equal.",
+    "src/wad18.py@99:13": "'(a < 0) != (b < 0)' in mul. The two differ only when an operand is zero, and then the magnitude is zero; the integers have no negative zero, so -0 == 0. Extensionally equal.",
+    "src/wad18.py@99:24": "Same as above, the other operand."
+  },
+  "purpose": "Mutants that are PROVABLY equivalent: no test can kill them because they cannot change any observable value. Each entry states the proof, not an opinion. Every survivor that was merely a judgement call has been eliminated by changing the code instead, so this file now contains only mathematical equivalences.",
+  "standard": "An entry belongs here only if the mutated and original programs are extensionally equal on the whole input domain. Anything weaker is an admitted gap."
+}
