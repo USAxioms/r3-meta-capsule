@@ -1,0 +1,24 @@
+{
+  "set_id": "M-v1.0.0",
+  "provenance": "AUTHORED_BY_THE_SAME_AGENT_THAT_RUNS_PHI",
+  "externally_frozen": false,
+  "note": "This field is false. See README.md finding L2-02. Any certificate emitted against this set is CONFORMANCE_ONLY and, per Proposition 4, vacuous until an independent party authors or ratifies this file.",
+  "invariants": [
+    {"id":"M1","hard":true,"title":"Type coherence","requires":"types_declared",
+     "test":"every symbol in the operator expression has a declared domain and codomain and the composition type-checks"},
+    {"id":"M2","hard":true,"title":"Totality","requires":"phi_total",
+     "test":"the iterated map is total on its declared domain"},
+    {"id":"M3","hard":true,"title":"Existence","requires":"existence_route_declared",
+     "test":"a fixed point is proved to exist under stated hypotheses, or its absence is a declared outcome"},
+    {"id":"M4","hard":true,"title":"Certificate soundness","requires":"certificate_sound",
+     "test":"the stopping rule implies a bound on distance to a fixed point, with all constants reported"},
+    {"id":"M5","hard":true,"title":"Reproducibility","requires":"determinism_contract",
+     "test":"bit-identical re-execution follows from a stated contract, not from a number representation"},
+    {"id":"M6","hard":true,"title":"Non-circularity","requires":"invariants_external",
+     "test":"no component of the validation set is produced by the object under validation"},
+    {"id":"M7","hard":false,"title":"Attainability","requires":"obligations_attainable",
+     "test":"every obligation is satisfiable by some admissible artefact and falsifiable by observation"},
+    {"id":"M8","hard":false,"title":"Comparability","requires":"comparison_specified",
+     "test":"any comparative claim specifies budget, seeds, statistical test and effect size"}
+  ]
+}
