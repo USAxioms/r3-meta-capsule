@@ -1,0 +1,81 @@
+{
+  "arithmetic": "WAD-18 exact fixed point; no IEEE-754 anywhere",
+  "base_samples_N": 512,
+  "bootstrap_resamples": 400,
+  "estimator_note": "Saltelli estimators are unbiased only asymptotically. An index slightly above 1, or slightly negative, is finite-sample noise at this N and is reported as computed rather than clipped into [0,1].",
+  "indices": [
+    {
+      "S1_ci95_wad18": [
+        "0.871729608279250200",
+        "1.104109748903215954"
+      ],
+      "S1_ci_contains_one": true,
+      "S1_ci_contains_zero": false,
+      "S1_wad18": "0.990013242903611934",
+      "ST_ci95_wad18": [
+        "0.875283975250250703",
+        "1.067847765463370103"
+      ],
+      "ST_wad18": "0.972395583129910965",
+      "parameter": "P_SUM_MAX"
+    },
+    {
+      "S1_ci95_wad18": [
+        "0.000000000000000000",
+        "0.000000000000000000"
+      ],
+      "S1_ci_contains_one": false,
+      "S1_ci_contains_zero": true,
+      "S1_wad18": "0.000000000000000000",
+      "ST_ci95_wad18": [
+        "0.000000000000000000",
+        "0.000000000000000000"
+      ],
+      "ST_wad18": "0.000000000000000000",
+      "parameter": "P_PROD_MIN"
+    },
+    {
+      "S1_ci95_wad18": [
+        "-0.008346475702721425",
+        "0.015474990511425940"
+      ],
+      "S1_ci_contains_one": false,
+      "S1_ci_contains_zero": true,
+      "S1_wad18": "0.004124982803189102",
+      "ST_ci95_wad18": [
+        "0.008213882038434202",
+        "0.010240793756314114"
+      ],
+      "ST_wad18": "0.009195022142120525",
+      "parameter": "P_GAP_MIN"
+    }
+  ],
+  "interpretation": "S1 near zero with a near-zero output variance means the fixed point does not move under the declared parameter uncertainty. Indices are undefined, and reported as null, when the variance is exactly zero.",
+  "method": "Saltelli first-order and total-effect Sobol indices",
+  "model_runs": 2560,
+  "oracle_budget_per_run": 400,
+  "output_max": 21338,
+  "output_min": 20772,
+  "output_variance_wad18": "25444.728694915771484375",
+  "perturbed": [
+    {
+      "hi": 220,
+      "lo": 180,
+      "nominal": 200,
+      "parameter": "P_SUM_MAX"
+    },
+    {
+      "hi": 330,
+      "lo": 270,
+      "nominal": 300,
+      "parameter": "P_PROD_MIN"
+    },
+    {
+      "hi": 11,
+      "lo": 9,
+      "nominal": 10,
+      "parameter": "P_GAP_MIN"
+    }
+  ],
+  "seed": 20261031
+}

@@ -1,0 +1,10 @@
+{
+  "certificate": "CONFORMANCE_ONLY",
+  "certificate_is_vacuous_per_proposition_4": true,
+  "final_mu": 0,
+  "final_state_sha3": "33d8ae30f9444dab7480cccd9f033f6eab36487706394a99704e359431fa6aa5",
+  "meta_invariants_externally_frozen": false,
+  "reason": null,
+  "status": "FIXPOINT",
+  "steps": 9
+}

@@ -1,0 +1,375 @@
+{
+  "PO3_epsilon_dominance": {
+    "archive_members_dominating_d0": 12,
+    "archive_size": 175,
+    "best_objectives": {
+      "f1": 6718,
+      "f2": 712
+    },
+    "best_x": [
+      33,
+      33,
+      39,
+      29,
+      33,
+      33
+    ],
+    "d0_objectives": {
+      "f1": 2000,
+      "f2": 1112
+    },
+    "eps_dominates_d0": true,
+    "epsilon": [
+      0,
+      0
+    ],
+    "method": "Obligation 3 is judged against the non-dominated ARCHIVE, not against the scalarised optimum. A weighted descent cannot reach designs that dominate the reference when the weights point elsewhere; treating its failure as evidence that no such design exists is a search defect reported as a finding.",
+    "pareto_budget": 4000,
+    "reference_d0": [
+      20,
+      20,
+      30,
+      10,
+      10,
+      10
+    ],
+    "scalarised_note": "the scalarised optimum does NOT dominate d0; it trades f1 for f2, which is what its weights ask for",
+    "scalarised_optimum_dominates_d0": false,
+    "strictly_dominates_d0": true,
+    "witness": [
+      20,
+      16,
+      21,
+      11,
+      18,
+      14
+    ],
+    "witness_objectives": {
+      "f1": 1738,
+      "f2": 1112
+    }
+  },
+  "arithmetic": "WAD-18 exact fixed point; no IEEE-754 anywhere",
+  "baseline": "penalty hill-climb (weak-but-standard; NOT state of the art)",
+  "baseline_mean_wad18": "21240.266666666666666667",
+  "baseline_sd_wad18": "128.254677194331677995",
+  "baseline_wins": 0,
+  "cliffs_delta": {
+    "delta_exact": {
+      "den": 900,
+      "num": -900
+    },
+    "delta_wad18": "-1.000000000000000000",
+    "magnitude": "large"
+  },
+  "paired_difference_ci": {
+    "ci_hi_wad18": "-210.400000000000000000",
+    "ci_lo_wad18": "-302.933333333333333333",
+    "iters": 2000,
+    "level": {
+      "den": 200,
+      "num": 195
+    },
+    "mean_wad18": "-253.466666666666666667",
+    "seed": 20261031
+  },
+  "per_seed": [
+    {
+      "baseline": 21324,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1075,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 1
+    },
+    {
+      "baseline": 21176,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1204,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 2
+    },
+    {
+      "baseline": 21142,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1202,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 3
+    },
+    {
+      "baseline": 21240,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1202,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 4
+    },
+    {
+      "baseline": 21086,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1197,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 5
+    },
+    {
+      "baseline": 21208,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1190,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20966,
+      "seed": 6
+    },
+    {
+      "baseline": 21234,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1080,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20958,
+      "seed": 7
+    },
+    {
+      "baseline": 21192,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1141,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 8
+    },
+    {
+      "baseline": 21264,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1273,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 9
+    },
+    {
+      "baseline": 21208,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1154,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 10
+    },
+    {
+      "baseline": 21286,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1092,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20958,
+      "seed": 11
+    },
+    {
+      "baseline": 21260,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1085,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 12
+    },
+    {
+      "baseline": 21200,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1148,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 13
+    },
+    {
+      "baseline": 21046,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1203,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 14
+    },
+    {
+      "baseline": 21110,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1182,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 15
+    },
+    {
+      "baseline": 21304,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1177,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 16
+    },
+    {
+      "baseline": 21288,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1201,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 17
+    },
+    {
+      "baseline": 21088,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1168,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 18
+    },
+    {
+      "baseline": 21442,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1237,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 19
+    },
+    {
+      "baseline": 21346,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1206,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20978,
+      "seed": 20
+    },
+    {
+      "baseline": 21288,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1164,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 21
+    },
+    {
+      "baseline": 21200,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1137,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20958,
+      "seed": 22
+    },
+    {
+      "baseline": 21058,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1117,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20966,
+      "seed": 23
+    },
+    {
+      "baseline": 21156,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1248,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20978,
+      "seed": 24
+    },
+    {
+      "baseline": 21186,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1202,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20966,
+      "seed": 25
+    },
+    {
+      "baseline": 21234,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1189,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 26
+    },
+    {
+      "baseline": 21162,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1139,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 27
+    },
+    {
+      "baseline": 21688,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1209,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20998,
+      "seed": 28
+    },
+    {
+      "baseline": 21370,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1096,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20958,
+      "seed": 29
+    },
+    {
+      "baseline": 21422,
+      "baseline_feasible": true,
+      "baseline_infeasible_calls": 1051,
+      "calls_baseline": 2000,
+      "calls_r3": 2000,
+      "r3": 20958,
+      "seed": 30
+    }
+  ],
+  "pre_registered": {
+    "alternative": "two-sided",
+    "budget": 2000,
+    "budget_metric": "oracle_calls",
+    "effect_size": "cliffs-delta",
+    "seeds": 30,
+    "test": "wilcoxon-signed-rank-paired"
+  },
+  "r3_mean_wad18": "20986.800000000000000000",
+  "r3_sd_wad18": "16.440600151251575686",
+  "r3_wins": 30,
+  "rejected_candidates_total": 37638,
+  "scope_caveat": "Contribution is established against this baseline on this instance only. It is not a claim about R3 versus modern constrained optimisers, and no such claim is supported by this capsule.",
+  "ties": 0,
+  "wilcoxon": {
+    "W": "0.000000000000000000",
+    "W_doubled": 0,
+    "method": "exact-dp",
+    "n_effective": 30,
+    "null_support": 930,
+    "p_exact": {
+      "den": 536870912,
+      "num": 1
+    },
+    "p_two_sided_wad18": "0.000000001862645149",
+    "zeros_dropped": 0
+  }
+}

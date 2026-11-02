@@ -1,0 +1,21 @@
+{
+  "certificate": {
+    "note": "The score below is measured against an invariant set that has not been ratified by an independent party. The score is real; the certificate that it was the RIGHT standard is not. These are separate claims and neither substitutes for the other.",
+    "ratified": false,
+    "status": "BLOCKED_ON_EXTERNAL_ATTESTATION",
+    "vacuous_per_proposition_4": true
+  },
+  "denominator": "in-scope obligations only",
+  "excluded_from_denominator": [
+    {
+      "kind": "environment-limited",
+      "obligation": "PO6_relevance",
+      "reason": "Requires comparison against data from outside the calibration set. No external benchmark exists in this environment, so the obligation cannot be attempted here at all."
+    }
+  ],
+  "outstanding": [],
+  "perfect_within_scope": true,
+  "score": "7/7",
+  "scored_discharged": 7,
+  "scored_total": 7
+}

@@ -1,0 +1,270 @@
+{
+  "all": [
+    {
+      "at_line_col": "19:49",
+      "file": "src/r3_engine.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "56:35",
+      "file": "src/r3_engine.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "80:42",
+      "file": "src/r3_engine.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "104:35",
+      "file": "src/r3_engine.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "20:37",
+      "file": "src/projection.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "23:23",
+      "file": "src/domain.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "34:19",
+      "file": "src/domain.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "54:26",
+      "file": "src/domain.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "72:21",
+      "file": "src/domain.py",
+      "mutation": "'<=' -> '<'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "95:27",
+      "file": "src/domain.py",
+      "mutation": "'>=' -> '>'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "103:38",
+      "file": "src/domain.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "107:38",
+      "file": "src/domain.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "110:51",
+      "file": "src/domain.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "121:55",
+      "file": "src/domain.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "41:11",
+      "file": "src/wad18.py",
+      "mutation": "'<=' -> '<'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "58:19",
+      "file": "src/wad18.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "75:47",
+      "file": "src/wad18.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "78:11",
+      "file": "src/wad18.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "87:14",
+      "file": "src/wad18.py",
+      "mutation": "'==' -> '!='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "99:18",
+      "file": "src/wad18.py",
+      "mutation": "'!=' -> '=='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "107:13",
+      "file": "src/wad18.py",
+      "judgement": "equivalent",
+      "mutation": "'<' -> '<='",
+      "reason": "Same argument in div: a zero numerator gives a zero quotient, and -0 == 0.",
+      "status": "SURVIVED"
+    },
+    {
+      "at_line_col": "114:9",
+      "file": "src/wad18.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "151:11",
+      "file": "src/wad18.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "27:52",
+      "file": "src/stats.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "30:28",
+      "file": "src/stats.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "46:37",
+      "file": "src/stats.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "55:32",
+      "file": "src/stats.py",
+      "mutation": "'!=' -> '=='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "66:25",
+      "file": "src/stats.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "100:42",
+      "file": "src/stats.py",
+      "mutation": "'>' -> '>='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "119:39",
+      "file": "src/stats.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "126:29",
+      "file": "src/stats.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "29:30",
+      "file": "src/certify.py",
+      "mutation": "'>=' -> '>'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "49:40",
+      "file": "src/certify.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "81:33",
+      "file": "src/certify.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "25:18",
+      "file": "src/search.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "55:14",
+      "file": "src/search.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "91:17",
+      "file": "src/search.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "48:60",
+      "file": "src/ratify.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "58:28",
+      "file": "src/ratify.py",
+      "mutation": "'False' -> 'True'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "68:60",
+      "file": "src/ratify.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "83:33",
+      "file": "src/ratify.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    }
+  ],
+  "effective_kill_rate_percent_floor": 100,
+  "kill_rate_percent_floor": 97,
+  "killed": 40,
+  "mutants": 41,
+  "note": "A survivor is a defect the suite cannot see. Survivors are listed in full; a kill rate alone would hide which checks are missing.",
+  "survived": 1,
+  "survivors": [
+    {
+      "at_line_col": "107:13",
+      "file": "src/wad18.py",
+      "judgement": "equivalent",
+      "mutation": "'<' -> '<='",
+      "reason": "Same argument in div: a zero numerator gives a zero quotient, and -0 == 0.",
+      "status": "SURVIVED"
+    }
+  ],
+  "survivors_judged_equivalent": 1,
+  "survivors_real_or_unexplained": 0
+}

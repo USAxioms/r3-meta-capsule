@@ -1,0 +1,61 @@
+{
+  "effective_kill_rate_percent": 100,
+  "exhaustive": true,
+  "killed": 156,
+  "mutants": 162,
+  "note": "An unexplained survivor is a defect the suite cannot see. Equivalence claims live in spec/mutation_equivalents.json and are proofs, not judgements.",
+  "proven_equivalent_survivors": 6,
+  "raw_kill_rate_percent": 96,
+  "shards": 4,
+  "survivors": [
+    {
+      "at_line_col": "63:44",
+      "file": "src/stats.py",
+      "judgement": "equivalent",
+      "mutation": "'>' -> '>='",
+      "reason": "'d > 0' vs 'd >= 0' over nz. nz is constructed by filtering out every zero difference, so d == 0 does not occur in the iteration. Extensionally equal, and the filter is asserted at the call site.",
+      "status": "SURVIVED"
+    },
+    {
+      "at_line_col": "107:13",
+      "file": "src/wad18.py",
+      "judgement": "equivalent",
+      "mutation": "'<' -> '<='",
+      "reason": "Same argument in div: a zero numerator gives a zero quotient, and -0 == 0.",
+      "status": "SURVIVED"
+    },
+    {
+      "at_line_col": "107:24",
+      "file": "src/wad18.py",
+      "judgement": "equivalent",
+      "mutation": "'<' -> '<='",
+      "reason": "Same as above, the other operand.",
+      "status": "SURVIVED"
+    },
+    {
+      "at_line_col": "57:11",
+      "file": "src/wad18.py",
+      "judgement": "equivalent",
+      "mutation": "'<' -> '<='",
+      "reason": "'den < 0' vs 'den <= 0' in from_ratio. The two differ only at den == 0, and at den == 0 both paths reach round_half_even with a zero denominator, which raises. Extensionally equal.",
+      "status": "SURVIVED"
+    },
+    {
+      "at_line_col": "99:13",
+      "file": "src/wad18.py",
+      "judgement": "equivalent",
+      "mutation": "'<' -> '<='",
+      "reason": "'(a < 0) != (b < 0)' in mul. The two differ only when an operand is zero, and then the magnitude is zero; the integers have no negative zero, so -0 == 0. Extensionally equal.",
+      "status": "SURVIVED"
+    },
+    {
+      "at_line_col": "99:24",
+      "file": "src/wad18.py",
+      "judgement": "equivalent",
+      "mutation": "'<' -> '<='",
+      "reason": "Same as above, the other operand.",
+      "status": "SURVIVED"
+    }
+  ],
+  "unexplained_survivors": 0
+}

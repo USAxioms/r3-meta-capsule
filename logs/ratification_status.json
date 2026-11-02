@@ -1,0 +1,7 @@
+{
+  "certificate_is_vacuous_per_proposition_4": true,
+  "current_invariant_sha3": "0108bfcdcbff4f36602e6d07d71fa956c503e3ca62539bfa0f1748fbd75d30d6",
+  "ratified": false,
+  "reason": "no spec/ratification.json; see spec/RATIFICATION.md",
+  "status": "BLOCKED_ON_EXTERNAL_ATTESTATION"
+}

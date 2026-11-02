@@ -1,0 +1,264 @@
+{
+  "all": [
+    {
+      "at_line_col": "31:41",
+      "file": "src/r3_engine.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "62:54",
+      "file": "src/r3_engine.py",
+      "mutation": "'==' -> '!='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "83:39",
+      "file": "src/r3_engine.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "115:36",
+      "file": "src/r3_engine.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "60:45",
+      "file": "src/projection.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "30:25",
+      "file": "src/domain.py",
+      "mutation": "'>' -> '>='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "36:24",
+      "file": "src/domain.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "66:17",
+      "file": "src/domain.py",
+      "mutation": "'<=' -> '<'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "73:19",
+      "file": "src/domain.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "99:32",
+      "file": "src/domain.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "105:28",
+      "file": "src/domain.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "110:24",
+      "file": "src/domain.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "115:55",
+      "file": "src/domain.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "123:60",
+      "file": "src/domain.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "45:29",
+      "file": "src/wad18.py",
+      "mutation": "'==' -> '!='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "73:17",
+      "file": "src/wad18.py",
+      "mutation": "'>' -> '>='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "77:34",
+      "file": "src/wad18.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "85:12",
+      "file": "src/wad18.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "94:16",
+      "file": "src/wad18.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "101:11",
+      "file": "src/wad18.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "107:24",
+      "file": "src/wad18.py",
+      "judgement": "equivalent",
+      "mutation": "'<' -> '<='",
+      "reason": "Same as above, the other operand.",
+      "status": "SURVIVED"
+    },
+    {
+      "at_line_col": "135:9",
+      "file": "src/wad18.py",
+      "mutation": "'==' -> '!='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "27:16",
+      "file": "src/stats.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "29:15",
+      "file": "src/stats.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "43:26",
+      "file": "src/stats.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "48:38",
+      "file": "src/stats.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "61:17",
+      "file": "src/stats.py",
+      "mutation": "'!=' -> '=='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "75:40",
+      "file": "src/stats.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "103:24",
+      "file": "src/stats.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "126:14",
+      "file": "src/stats.py",
+      "mutation": "'<=' -> '<'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "21:25",
+      "file": "src/certify.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "42:22",
+      "file": "src/certify.py",
+      "mutation": "'<' -> '<='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "64:13",
+      "file": "src/certify.py",
+      "mutation": "'==' -> '!='",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "25:10",
+      "file": "src/search.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "42:30",
+      "file": "src/search.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "81:19",
+      "file": "src/search.py",
+      "mutation": "'+' -> '-'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "121:55",
+      "file": "src/search.py",
+      "mutation": "'-' -> '+'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "56:60",
+      "file": "src/ratify.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "64:33",
+      "file": "src/ratify.py",
+      "mutation": "'True' -> 'False'",
+      "status": "killed"
+    },
+    {
+      "at_line_col": "72:56",
+      "file": "src/ratify.py",
+      "mutation": "'False' -> 'True'",
+      "status": "killed"
+    }
+  ],
+  "effective_kill_rate_percent_floor": 100,
+  "kill_rate_percent_floor": 97,
+  "killed": 39,
+  "mutants": 40,
+  "note": "A survivor is a defect the suite cannot see. Survivors are listed in full; a kill rate alone would hide which checks are missing.",
+  "survived": 1,
+  "survivors": [
+    {
+      "at_line_col": "107:24",
+      "file": "src/wad18.py",
+      "judgement": "equivalent",
+      "mutation": "'<' -> '<='",
+      "reason": "Same as above, the other operand.",
+      "status": "SURVIVED"
+    }
+  ],
+  "survivors_judged_equivalent": 1,
+  "survivors_real_or_unexplained": 0
+}
