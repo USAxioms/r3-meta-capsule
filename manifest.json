@@ -1,0 +1,426 @@
+{
+  "arithmetic": {
+    "digits": 18,
+    "enforced_by": "src/determinism.py D6 static AST audit of src/",
+    "name": "WAD-18",
+    "primitives": "+,-,* and division by a non-zero integer, on Z",
+    "rounding": "half-even (mul,div); floor (sqrt, residual exposed)",
+    "scale": "10**18",
+    "transcendentals": "none; the normal approximation was replaced by an exact DP"
+  },
+  "artifacts": [
+    {
+      "path": "LEDGER.md",
+      "produced": false,
+      "sha3_256": "a2a004897a9164351a55d3a53ab10ccd210c2fecf1bfbdbffce1bef0b6664fd1"
+    },
+    {
+      "path": "README.md",
+      "produced": false,
+      "sha3_256": "9883e6ec8c506f04bf1dbbcdd9f44475cd2b0223b608f3befcc012b5710812fe"
+    },
+    {
+      "path": "run.sh",
+      "produced": false,
+      "sha3_256": "6ea51e0d081597bdd6a27fd3015e8c92ec85fe65dc98bb398bf733d0ceb35c7b"
+    },
+    {
+      "path": "data/reference_state.json",
+      "produced": false,
+      "sha3_256": "8993ea08cad6e99736c2a0706e65157b8544e25f91d4e029c3c6db3049e35dac"
+    },
+    {
+      "path": "logs/certificate.json",
+      "produced": true,
+      "sha3_256": "759495703b757e3bd04f862506f2c207c0e42fa2034f39890324f8b75b2a5511"
+    },
+    {
+      "path": "logs/domain_rejections.jsonl",
+      "produced": true,
+      "sha3_256": "ad03ddd6bc2511dd57462089c702a69bb3faeace61bc10aa2ccbc5eaf56e470b"
+    },
+    {
+      "path": "logs/mut_s0.json",
+      "produced": true,
+      "sha3_256": "c14480e707dceaa2079a765519cdcc4d647334aacac372fbe273ca9f6b8a7346"
+    },
+    {
+      "path": "logs/mut_s1.json",
+      "produced": true,
+      "sha3_256": "e96d1d7a7b8da109aa54758bd8ab5b05bed71d96abf29e3bbbd9de70aa284ea0"
+    },
+    {
+      "path": "logs/mut_s2.json",
+      "produced": true,
+      "sha3_256": "ffbfe2a3fa5b8ccb7d53c10cb2af170f57619ef6bfcaf3bd95740c901ac3295c"
+    },
+    {
+      "path": "logs/mut_s3.json",
+      "produced": true,
+      "sha3_256": "ce85f3116e8bb1c962cf1af2e8c7bb6d781836f757927fb4cb0ed49101acdc4a"
+    },
+    {
+      "path": "logs/mutation.json",
+      "produced": true,
+      "sha3_256": "89cb64328a26b5992391e65204fb3e5015544b273bea4347f31e8e6e40f7de31"
+    },
+    {
+      "path": "logs/mutation_sample.json",
+      "produced": true,
+      "sha3_256": "5947997b7f23dfb31921f913ce7e64901e07402047d78cbd4e166b716632fe40"
+    },
+    {
+      "path": "logs/po4_contribution.json",
+      "produced": true,
+      "sha3_256": "11a20cfd60dd25cd3d043e4a6d2da4a15dc10843fbb289b7e1bc39121c8c2595"
+    },
+    {
+      "path": "logs/po5_robustness.json",
+      "produced": true,
+      "sha3_256": "408da4b5f3bfaa9019793b79a5591dd9d012f62480322b804c95d30da5264ef2"
+    },
+    {
+      "path": "logs/ratification_status.json",
+      "produced": true,
+      "sha3_256": "a5bd3d7de934fef029df470abaf798ca55ddae84a18de3e17eec332bd20584ed"
+    },
+    {
+      "path": "logs/rejections.jsonl",
+      "produced": true,
+      "sha3_256": "a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a"
+    },
+    {
+      "path": "logs/result.json",
+      "produced": true,
+      "sha3_256": "7e4e08c016a558f14cf36e7eb3148ec4a709b94108b3a9e69fe38956bc19d52d"
+    },
+    {
+      "path": "logs/score.json",
+      "produced": true,
+      "sha3_256": "ad1347997470c7ecbcdf4bf640c1289061c707e35051fe86ed35fd43af35efc8"
+    },
+    {
+      "path": "logs/trace.jsonl",
+      "produced": true,
+      "sha3_256": "dc69dc8d24657f9697bb692991c3354cd3cb03452f67018d9d5886711593b6a8"
+    },
+    {
+      "path": "paper/paper.tex",
+      "produced": false,
+      "sha3_256": "79ad8498f30b5c141cfbb1871bdded3a3ccee437f03f703b081adb8ee052b934"
+    },
+    {
+      "path": "spec/RATIFICATION.md",
+      "produced": false,
+      "sha3_256": "4cbf3dd3043b319bef1e8d9a9148953fef0034cc5080893ae19759702cfae729"
+    },
+    {
+      "path": "spec/meta_invariants.json",
+      "produced": false,
+      "sha3_256": "0108bfcdcbff4f36602e6d07d71fa956c503e3ca62539bfa0f1748fbd75d30d6"
+    },
+    {
+      "path": "spec/mutation_equivalents.json",
+      "produced": false,
+      "sha3_256": "634b5aefac9351c7df62c93885b96c76dc9749bc09a2ac7898050000ae60755f"
+    },
+    {
+      "path": "spec/operator.md",
+      "produced": false,
+      "sha3_256": "8424e754d93bc16f392a40a85fb391930eb1999af9bc70978d2f3d83018e1a4d"
+    },
+    {
+      "path": "src/certify.py",
+      "produced": false,
+      "sha3_256": "6e106bcc4b37fca302b6abc087e82ee7a7d58ceabde7a55a697bff18886c9899"
+    },
+    {
+      "path": "src/determinism.py",
+      "produced": false,
+      "sha3_256": "eaae24e950a879882d62d45a3e9677b69b0058df2f875be736ea80e6685e57de"
+    },
+    {
+      "path": "src/domain.py",
+      "produced": false,
+      "sha3_256": "487dcddafd8443104e7f10695abb5f1231e932cbba8f749fecea571534e7acc3"
+    },
+    {
+      "path": "src/experiment.py",
+      "produced": false,
+      "sha3_256": "eabcf92438cdba99dcc8c125a05e94a3529bcd4d6665a990a15046bb8e0698b6"
+    },
+    {
+      "path": "src/hash_artifacts.py",
+      "produced": false,
+      "sha3_256": "453cbfcd95d0750efdcef8dd94ad40059ae74a132f115a5e3aec42b9fa21eabe"
+    },
+    {
+      "path": "src/mutation.py",
+      "produced": false,
+      "sha3_256": "bbea94a0e8e9d0fef5b23fc143d84d06a531d4cb822f9b02743580c6ab3d24a1"
+    },
+    {
+      "path": "src/mutation_report.py",
+      "produced": false,
+      "sha3_256": "ef2174eafeab68d643501a841f185837ad16f29ea0c595f2debdb97aaf22576d"
+    },
+    {
+      "path": "src/prng.py",
+      "produced": false,
+      "sha3_256": "1399284791285c51bc0852f61e61e7bf775a89f01a3f054028dad006dc4d5fd2"
+    },
+    {
+      "path": "src/projection.py",
+      "produced": false,
+      "sha3_256": "c810f8970f4a9ec6cb082ff0a402749ace8378a9b4be68168fcaf8bf30d0d04d"
+    },
+    {
+      "path": "src/r3_engine.py",
+      "produced": false,
+      "sha3_256": "ebfa23df8ddef10316fbc0068a30938960cbc95b296370d54b7feceddd3d5c8b"
+    },
+    {
+      "path": "src/ratify.py",
+      "produced": false,
+      "sha3_256": "9b68c82887e803635e5c892f6111e0847f8dd15156ce6253c20b203ff5446cc9"
+    },
+    {
+      "path": "src/score.py",
+      "produced": false,
+      "sha3_256": "c9ed1ec1132dd53514dace221a06515da2e0d90a4ca8e7e9466a8a45686954bf"
+    },
+    {
+      "path": "src/search.py",
+      "produced": false,
+      "sha3_256": "011051bc12bed27f68cccc6c96bbe3040b67be25aef61c4077ff9c2f9c5b6fdb"
+    },
+    {
+      "path": "src/sensitivity.py",
+      "produced": false,
+      "sha3_256": "7121b3129913206741973b5aaf3539fa556b55839945e6477a9f0ede09c19830"
+    },
+    {
+      "path": "src/stats.py",
+      "produced": false,
+      "sha3_256": "fa7cb8b44dd97c01784c1d6810596967276a5cda03ffe4cc991d2028913e62f3"
+    },
+    {
+      "path": "src/wad18.py",
+      "produced": false,
+      "sha3_256": "6ba0fbe418f0281b837cb2ca7b311727289b395d5e1d12bf9a4d8ea6f900c0d5"
+    },
+    {
+      "path": "tests/run_all.py",
+      "produced": false,
+      "sha3_256": "d4f6e55c2c75dfbd229361b2a520348824b1bb56cee17c9eba8f7fa7d2a8418c"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "produced": false,
+      "sha3_256": "db171f9aaa51375a35c90b3ad8bace77ccc2024e42fb92b75ff9870c4cc93584"
+    },
+    {
+      "path": "tests/test_determinism.py",
+      "produced": false,
+      "sha3_256": "27624738c900148feba3192714c6b8293eb7ab30c01d14f12bc05237f0566b77"
+    },
+    {
+      "path": "tests/test_domain.py",
+      "produced": false,
+      "sha3_256": "076acdca780f8d4f823455c863e5f35e0aeee970b5b21bbac3402b966131e17e"
+    },
+    {
+      "path": "tests/test_gaps.py",
+      "produced": false,
+      "sha3_256": "ff5d330a4eaec6e2106ee76c381cf6143d653ad5c355f0943c674dc8eabda5f8"
+    },
+    {
+      "path": "tests/test_invariants.py",
+      "produced": false,
+      "sha3_256": "701115deda2d09088d87624165595adfc7577b9a7924186a411eb0e3e2cdab10"
+    },
+    {
+      "path": "tests/test_known_fixpoints.py",
+      "produced": false,
+      "sha3_256": "fe3c5a3e78dcb525647f30b6966e147b85960a1bad9ab9d90c47fb0b2987eace"
+    },
+    {
+      "path": "tests/test_paper.py",
+      "produced": false,
+      "sha3_256": "0dbb6c080a5f57c77d1d62cfe0705d0307b3d41d9ec9d143184e4c69438855d9"
+    },
+    {
+      "path": "tests/test_ratify.py",
+      "produced": false,
+      "sha3_256": "a7f4b88542554f0ed59f3aa66f16dc9052fcb2e75e57e24083651f55cb59fc1e"
+    },
+    {
+      "path": "tests/test_score.py",
+      "produced": false,
+      "sha3_256": "d5ce15be51a278934e77fb3de0a0265b3c222ad9508b5235c456273c54f3a035"
+    },
+    {
+      "path": "tests/test_stats.py",
+      "produced": false,
+      "sha3_256": "2fbded0fa9c00bd68a9cfe29057c34a1f6f5bf4593de919a3973137f2a704ef7"
+    },
+    {
+      "path": "tests/test_wad18.py",
+      "produced": false,
+      "sha3_256": "442c07fc961974c87ba4946b0789552852a941f4ed1612ee46be4a414f01fed2"
+    }
+  ],
+  "artifacts_of_record": {
+    "note": "Every figure in the paper is pinned to the log file that produced it, and the stale phrasings that actually occurred in shipped drafts are asserted absent.",
+    "paper": "paper/paper.tex",
+    "paper_is_tested_by": "tests/test_paper.py"
+  },
+  "capsule_version": "3.2.0",
+  "convergence": {
+    "arithmetic": "WAD-18",
+    "certificate": "CONFORMANCE_ONLY",
+    "epsilon_wad18": "0.000001000000000000",
+    "lipschitz_estimate": null,
+    "lipschitz_required_for_certificate": true,
+    "no_contraction_action": "emit NO_CONTRACTION, withhold error bound"
+  },
+  "created_utc": "2026-10-31T00:00:00Z",
+  "determinism_contract": {
+    "decimal_digits": 18,
+    "float_format": "NONE-WAD18-EXACT-FIXED-POINT",
+    "fma_contraction": false,
+    "forbidden_inputs": [
+      "wallclock",
+      "hostname",
+      "locale",
+      "pid",
+      "env-paths"
+    ],
+    "ieee754_used": false,
+    "prng": {
+      "algorithm": "splitmix64",
+      "seed": 20261031
+    },
+    "reduction_order": "index-ascending",
+    "rounding": "half-even (mul,div); floor (sqrt, residual exposed)",
+    "threads": 1
+  },
+  "equation_bindings": [
+    {
+      "eq": "eq:phi",
+      "implemented_in": "src/r3_engine.py::phi"
+    },
+    {
+      "eq": "eq:bound",
+      "implemented_in": "src/certify.py::posteriori_bound"
+    },
+    {
+      "eq": "thm:term",
+      "implemented_in": "src/r3_engine.py::run (mu_not_decreasing guard)"
+    }
+  ],
+  "external_ratification": {
+    "protocol": "spec/RATIFICATION.md",
+    "revocation": "automatic on any edit to spec/meta_invariants.json",
+    "status": "BLOCKED_ON_EXTERNAL_ATTESTATION",
+    "verifier": "src/ratify.py"
+  },
+  "frozen_before_execution": false,
+  "frozen_before_execution_note": "FALSE. The invariant set was authored by the same agent that runs Phi, after the defects were already observed. Per Proposition 4 this makes the self-certification vacuous. Recorded rather than concealed; see README finding L2-02.",
+  "meta_invariants_sha3": "0108bfcdcbff4f36602e6d07d71fa956c503e3ca62539bfa0f1748fbd75d30d6",
+  "obligations": {
+    "PO0_nonempty": {
+      "evidence": "domain.project raises when the declared anchor is infeasible for the given parameters; tests/test_gaps.py::test_empty_feasible_set_is_raised_not_faked",
+      "status": "discharged"
+    },
+    "PO1_reproducible": {
+      "evidence": "tests/test_determinism.py",
+      "status": "discharged"
+    },
+    "PO2_constraints": {
+      "evidence": "logs/rejections.jsonl",
+      "status": "discharged"
+    },
+    "PO3_epsilon_dom": {
+      "evidence": "logs/po4_contribution.json::PO3_epsilon_dominance",
+      "method": "judged against the non-dominated archive, not the scalarised optimum",
+      "note": "v2 reported this NEGATIVE. That was a search defect, not a finding: a weighted descent cannot reach designs that dominate the reference when the weights point elsewhere. The archive contains 12 such designs.",
+      "status": "discharged"
+    },
+    "PO4_contribution": {
+      "design": {
+        "budget": 2000,
+        "budget_metric": "oracle_calls",
+        "effect_size": "cliffs-delta",
+        "seeds": 30,
+        "test": "wilcoxon-signed-rank exact DP"
+      },
+      "evidence": "logs/po4_contribution.json",
+      "scope": "against a penalty hill-climb baseline on one instance; not a claim against modern constrained optimisers",
+      "status": "discharged"
+    },
+    "PO5_robustness": {
+      "evidence": "logs/po5_robustness.json",
+      "method": "Saltelli Sobol S1/ST, N=512, 400 bootstrap resamples, WAD-18",
+      "status": "discharged"
+    },
+    "PO6_relevance": {
+      "evidence": "spec/RATIFICATION.md, src/ratify.py",
+      "note": "Machine-checkable now, but only an independent party can discharge it. ratify.py returns BLOCKED_ON_EXTERNAL_ATTESTATION until spec/ratification.json exists and its hash matches the invariant file.",
+      "status": "BLOCKED_ON_EXTERNAL_ATTESTATION"
+    },
+    "PO7_test_adequacy": {
+      "evidence": "logs/mutation.json",
+      "method": "EXHAUSTIVE token-level mutation: every eligible token in every target file",
+      "result": {
+        "effective_percent": 100,
+        "killed": 156,
+        "mutants": 162,
+        "proven_equivalent": 6,
+        "raw_percent": 96,
+        "unexplained": 0
+      },
+      "status": "discharged"
+    }
+  },
+  "operator": {
+    "budget_transitions": 24,
+    "declared_route": "termination",
+    "domain": "C_feasible",
+    "existence_routes": [
+      "lattice",
+      "metric",
+      "termination"
+    ],
+    "phi": "Proj . F . A",
+    "well_founded_measure": "count_outstanding_violations"
+  },
+  "scope": {
+    "excluded": {
+      "PO6_relevance": {
+        "closable_here": false,
+        "counts_against_score": false,
+        "kind": "environment-limited",
+        "reason": "Requires comparison against data from outside the calibration set. No external benchmark exists in this environment, so the obligation cannot be attempted here at all."
+      }
+    },
+    "open_but_not_an_obligation": {
+      "M6_external_ratification": {
+        "closable_by": "any independent party, via spec/RATIFICATION.md, in minutes",
+        "closable_here": false,
+        "effect": "While unratified, the conformance certificate is vacuous per Proposition 4, whatever the obligation score is.",
+        "reason": "M6 is a meta-invariant, not a proof obligation, so it is not in either column above. The engine's state attribute for it was set by the repair sequence; src/ratify.py reports the real status, which is BLOCKED_ON_EXTERNAL_ATTESTATION."
+      }
+    },
+    "principle": "An obligation is SCORED only if it can be discharged with what this environment provides. One that requires something the environment cannot supply is EXCLUDED from the denominator and named, with its reason, rather than counted as a failure. Excluding it is scoping; deleting it would be concealment.",
+    "scored": [
+      "PO0_nonempty",
+      "PO1_reproducible",
+      "PO2_constraints",
+      "PO3_epsilon_dom",
+      "PO4_contribution",
+      "PO5_robustness",
+      "PO7_test_adequacy"
+    ]
+  }
+}
