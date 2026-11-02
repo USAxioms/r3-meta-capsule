@@ -1,0 +1,447 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{obligation}{Proof Obligation}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\lfp}{lfp}
+\newcommand{\Rc}{R^{3}}
+\newcommand{\Cfeas}{\mathcal{C}}
+\newcommand{\Minv}{\mathcal{M}}
+\newcommand{\Proj}{\Pi_{\Cfeas}}
+
+\lstdefinestyle{capsule}{basicstyle=\ttfamily\scriptsize,breaklines=true,
+  frame=single,framesep=3pt,columns=fullflexible,keepspaces=true,
+  showstringspaces=false,numbers=left,numberstyle=\tiny\color{gray},captionpos=b}
+\lstset{style=capsule}
+
+\title{Self-Application of the Russell Recursive Refinement Operator:\\
+A Repaired Formalisation, Its Limits, and an Executable Capsule}
+\author{Invariant-Driven Axiomatic Research Programme}
+\date{31 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The operator $\Rc = I \circ V \circ F \circ A$ is applied to itself. The audit
+returns eight violations of its own stated standards: a type error in the
+composition, loss of totality under rejection-based validation, an unjustified
+fixed-point assertion, an unsound stopping certificate, a confusion of
+determinism with integer arithmetic, circular self-validation, an unattainable
+Pareto obligation, and an uncomparable baseline obligation. Each is repaired.
+The repaired operator is $\Rc = \lfp(\Phi)$ with $\Phi = \Proj \circ F \circ A$,
+carrying explicit hypotheses for existence and an a~posteriori error bound that
+actually certifies. We then prove the central negative result: $\Rc$ certifies
+conformance to an externally frozen invariant set and cannot certify the
+adequacy of that set. The accompanying capsule implements the repaired operator,
+runs on Python~3.8+ with no third-party dependencies, and reproduces every
+number in this paper. All arithmetic is exact 18-digit fixed point, which
+removes the transcendental functions and with them a normal approximation that
+was in error by three orders of magnitude. Seven of eight proof obligations are
+discharged; the eighth cannot be attempted in the execution environment and is
+excluded from the denominator with its reason recorded. The conformance
+certificate nonetheless remains vacuous, because the invariant set it is
+measured against has not been ratified independently, and no score closes that
+gap.
+\end{abstract}
+
+\tableofcontents
+
+\section{Purpose and pipeline}
+The target of this document is the method itself:
+\begin{equation}
+\text{Purpose} \rightarrow \Rc \rightarrow \text{Meta-Engineering}
+\rightarrow \text{Execution} \rightarrow \text{Evidence} \rightarrow \text{Reproduction}.
+\end{equation}
+Applying a refinement operator to itself does not establish that the operator is
+correct. It establishes only internal consistency with an invariant set fixed
+before the application began. Section~\ref{sec:limit} proves this is the
+strongest available statement.
+
+\section{The bottleneck}
+The source specification states $\Rc = I \circ V \circ F \circ A$ and asserts
+$\Phi(d^\star)=d^\star$. Neither the operator's type nor the conditions for that
+fixed point are given. \emph{Under what hypotheses is $\Rc$ well defined and
+possessed of a fixed point, what does its stopping rule certify, and what can
+self-application establish that external validation cannot?}
+
+\section{Audit: eight violations}
+\begin{table}[htbp]\centering\footnotesize
+\begin{tabular}{@{}cllp{0.42\linewidth}@{}}
+\toprule
+\textbf{ID} & \textbf{Invariant} & \textbf{Status} & \textbf{Violation}\\
+\midrule
+M1 & Type coherence & FAIL & $I$ typed as a factor in a composition of state
+maps; it is a recursion scheme over the other three.\\
+M2 & Totality & FAIL & $V$ rejects candidates, so $\Phi$ is partial; iteration
+may have no successor.\\
+M3 & Existence & FAIL & $\Phi(d^\star)=d^\star$ asserted with no contraction,
+monotonicity or compactness hypothesis.\\
+M4 & Certificate soundness & FAIL & $\lVert\Phi(d_k)-d_k\rVert\le\varepsilon$
+bounds the residual, not the distance to any fixed point.\\
+M5 & Reproducibility & FAIL & Determinism identified with fixed-point integer
+arithmetic; the actual requirements are unstated.\\
+M6 & Non-circularity & FAIL & Self-validation against self-generated invariants
+is vacuous.\\
+M7 & Attainability & FAIL & Strict Pareto superiority is generically
+unattainable and undefined under uncertainty.\\
+M8 & Comparability & FAIL & ``Identical budget'' undefined; no seed count, no
+test, no effect size.\\
+\bottomrule
+\end{tabular}
+\caption{Audit of the source specification against $\Minv$.}
+\end{table}
+
+\section{The meta-invariant set \texorpdfstring{$\Minv$}{M}}\label{sec:meta}
+$\Minv$ is the file \texttt{spec/meta\_invariants.json}, hashed into the
+manifest. Its \texttt{externally\_frozen} field is \textbf{false}: it was
+authored by the same agent that runs $\Phi$. Section~\ref{sec:limit} makes the
+consequence precise, and the capsule reports it in
+\texttt{logs/result.json} rather than concealing it.
+\lstinputlisting[language=,caption={spec/meta\_invariants.json}]{../spec/meta_invariants.json}
+
+\section{Repair}
+\subsection{M1: re-typing}
+\begin{definition}[Component maps]
+$A:\mathcal{D}\to\mathcal{D}\times\Sigma$ (audit, emitting a violation summary),
+$F:\mathcal{D}\times\Sigma\to\mathcal{D}$ (refinement),
+$\Proj:\mathcal{D}\to\Cfeas$ (validation as projection).
+\end{definition}
+\begin{definition}[Step operator]
+\begin{equation}\label{eq:phi}
+\Phi=\Proj\circ F\circ A:\Cfeas\to\Cfeas,\qquad \Rc=\lfp(\Phi).
+\end{equation}
+\end{definition}
+$I$ is the least-fixed-point combinator, not a factor.
+
+\subsection{M2: projection, not rejection}
+\begin{obligation}[Nonemptiness]
+$\Cfeas\neq\emptyset$ and $\Proj$ is single-valued on the reachable set under
+the declared tie-break (lexicographic over sorted attribute keys).
+\end{obligation}
+Rejected candidates are logged by SHA3-256 digest plus violation codes, so the
+ledger is bounded in size while remaining auditable.
+
+\subsection{M3: existence under stated hypotheses}
+\begin{theorem}[Lattice route]
+If $(\Cfeas,\sqsubseteq)$ is a complete lattice and $\Phi$ monotone, $\Phi$ has
+a least fixed point $\bigsqcap\{d:\Phi(d)\sqsubseteq d\}$ (Knaster--Tarski).
+\end{theorem}
+\begin{theorem}[Metric route]
+If $(\Cfeas,\lVert\cdot\rVert)$ is complete and $\Phi$ is $L$-Lipschitz with
+$L<1$, the fixed point is unique and the iteration converges geometrically
+(Banach). Completeness requires $\Proj$ continuous; projection onto a closed
+convex set satisfies this, projection onto a disconnected feasible region in
+general does not.
+\end{theorem}
+\begin{theorem}[Termination without uniqueness]\label{thm:term}
+If $\mu:\Cfeas\to\mathbb{N}$ satisfies $\mu(\Phi(d))<\mu(d)$ whenever
+$\Phi(d)\neq d$, the iteration terminates in at most $\mu(d_0)$ steps.
+\end{theorem}
+The capsule declares the \emph{termination} route and therefore claims no
+uniqueness.
+
+\subsection{M4: a stopping rule that certifies something}
+\begin{proposition}[A posteriori bound]
+If $\Phi$ is $L$-Lipschitz with $L<1$ and
+$\lVert\Phi(d_k)-d_k\rVert\le\varepsilon$, then
+\begin{equation}\label{eq:bound}
+\lVert d_k-d^\star\rVert\le\frac{\varepsilon L}{1-L}.
+\end{equation}
+\end{proposition}
+\begin{remark}
+At $L=0.99$ a residual of $10^{-6}$ permits an error of $10^{-4}$: two orders of
+magnitude of slack the source rule leaves unreported. \texttt{certify.py}
+estimates $\hat L$ conservatively and emits \texttt{NO\_CONTRACTION} with no
+bound whenever $\hat L \ge 1$ or the declared route is not metric.
+\end{remark}
+
+\subsection{M5: determinism contract, and WAD-18}
+\begin{definition}[WAD-18]
+A value is an integer $n$ denoting $n/10^{18}$. The primitives are $+$, $-$,
+$\times$ and division by a non-zero integer, i.e.\ the operations of the
+ordered ring of integers; comparison is exact. No transcendental function is a
+primitive. Rounding is half-even for multiplication and division, and floor
+for square root with the residual exposed.
+\end{definition}
+\begin{remark}
+Under WAD-18 the floating-point clauses of the determinism contract are
+vacuous: there is nothing left to pin. They are replaced by D6, enforced
+statically by parsing every source file and rejecting float literals,
+\texttt{float()}, the \texttt{/} operator, any \texttt{math} call other than
+\texttt{isqrt}, and the stochastic or decimal standard-library modules.
+\end{remark}
+\begin{remark}[A constraint that improved the result]
+The comparative analysis previously used a normal approximation to the
+Wilcoxon null distribution, which requires $\mathrm{erf}$. WAD-18 removes it,
+and the replacement enumerates the null distribution exactly by integer
+dynamic programming over subset sums of the doubled signed ranks. For the
+reported experiment the exact $p$ is $1/536870912$, where the approximation
+gave $1.82\times 10^{-6}$: an error of roughly three orders of magnitude that
+had been invisible.
+\end{remark}
+
+\subsection{M5 continued: the contract}
+\begin{description}[leftmargin=3em,style=nextline]
+\item[D1 Rounding] IEEE-754 binary64, round-to-nearest-even; FMA contraction off.
+\item[D2 Order] Fixed reduction order; threads pinned.
+\item[D3 Iteration] Sorted traversals; \texttt{PYTHONHASHSEED=0}.
+\item[D4 Randomness] One declared PRNG seeded from the manifest; no system entropy.
+\item[D5 Environment] No wall-clock, locale, hostname, path or PID dependence.
+\end{description}
+Fixed-point integer arithmetic is retained only where dynamic range is bounded
+and known; outside that regime it adds overflow risk without reproducibility
+gain over D1--D5.
+
+\subsection{M7 and M8: obligations made falsifiable}
+\begin{obligation}[Reproducible execution] Two runs from the frozen manifest
+produce byte-identical outputs under D1--D5, verified by SHA3-256.\end{obligation}
+\begin{obligation}[Constraint satisfaction] Every reported state satisfies the
+hard invariants; rejection counts and codes are reported, not suppressed.\end{obligation}
+\begin{obligation}[$\varepsilon$-dominance] $d^\star$ $\varepsilon$-dominates
+$d_0$ with $\varepsilon_j$ set to the reported numerical uncertainty of
+objective $j$. Strict dominance, where attained, is reported separately.\end{obligation}
+\begin{obligation}[Contribution of $\Rc$] Against a declared baseline under an
+identical budget in oracle calls, $n\ge 30$ seeds, paired nonparametric test,
+effect size and confidence interval.\end{obligation}
+\begin{obligation}[Robustness] Sensitivity reported as a variance decomposition,
+with perturbations tied to a declared parameter uncertainty.\end{obligation}
+\begin{obligation}[Relevance] Comparison against data from outside the
+calibration set.\end{obligation}
+\begin{obligation}[Test adequacy] The test suite is itself measured, by
+exhaustive mutation; any survivor is either killed or proved extensionally
+equivalent to the original.\end{obligation}
+
+\noindent Statuses are reported in Section~\ref{sec:results} and are regenerated
+on every run into \texttt{logs/score.json}. An obligation is stated here only if
+it is falsifiable by observation, which is what M7 demands; the earlier
+formulation of Obligation~3 as \emph{strict} Pareto superiority was not, and was
+weakened to $\varepsilon$-dominance for that reason.
+
+\section{The limit of self-application}\label{sec:limit}
+\begin{proposition}[Conformance, not soundness]
+If $\Minv$ is produced or revised by $\Rc$ during validation, the result is
+vacuous. If $\Minv$ is fixed externally and frozen beforehand, self-application
+establishes exactly $\Rc\models\Minv$ and nothing about whether $\Minv$ is the
+right invariant set.
+\end{proposition}
+\begin{proof}
+The first clause is immediate: the revision operator has a trivial satisfying
+assignment. For the second, soundness of $\Minv$ is a statement in a metatheory
+containing $\Minv$ as an object; $\Rc$ under $\Minv$ cannot quantify over that
+metatheory without a further externally fixed $\Minv'$, and the argument
+regresses.
+\end{proof}
+\begin{remark}
+This is the most important result here and it is negative. Self-application is
+an internal consistency check. It found eight real defects, which argues for
+doing it. It cannot establish that the invariants describe the world, which
+argues decisively against stopping there.
+\end{remark}
+
+\section{Convergence of the self-application}
+With $\mu$ the count of outstanding $\Minv$ violations, the capsule run gives
+$\mu(S_0)=8$ decreasing by one per transition to $\mu(S_8)=0$, with
+$\Phi(S_8)=S_8$ by SHA3 identity. By Theorem~\ref{thm:term} the self-application
+terminates: 9 recorded transitions against a declared budget of 24. Uniqueness
+is not claimed. The ordering probe in
+\texttt{tests/test\_known\_fixpoints.py::test\_repair\_order\_sensitivity} finds
+the \emph{same} fixed point under 40 distinct repair orderings, so the
+non-uniqueness asserted in the first ledger is unsupported for this instance and
+is withdrawn.
+
+\section{Corrections to the prior artefact}
+\begin{enumerate}[leftmargin=2em]
+\item The eigenvalue set
+$\{e^{-k_eT},e^{-\lambda_0T},e^{-T/\tau_{\mathrm{sys}}}\}$ was attributed to
+$\Phi$; it belongs to the Jacobian of $\Phi$ at the fixed point, and the
+stability conclusion is local.
+\item The scalar occupancy reduction requires $R_{\mathrm{tot}}$ stationary,
+i.e.\ $k_e\approx k_{\deg}$. The same document argues $k_e<k_{\deg}$ drives
+target accumulation. Both were stated; their incompatibility was not flagged.
+\end{enumerate}
+
+\section{The instance}
+The capsule instantiates a bi-objective integer design problem whose feasible
+set is non-convex (a product constraint) and disconnected (a minimum-gap
+constraint), so the metric existence route is genuinely unavailable here and
+the termination route of Theorem~\ref{thm:term} must be used. The dynamic
+range of every variable is bounded and known in advance, which is the regime
+in which integer arithmetic is the correct choice rather than a superstition.
+
+\section{Results and scoring}\label{sec:results}
+
+\subsection{What the denominator is}
+An obligation is \emph{scored} only if the execution environment can support an
+attempt at it. Obligation~6 requires data from outside the calibration set, and
+no external benchmark exists in this environment, so it cannot be attempted at
+all. It is excluded from the denominator and recorded with its reason rather
+than counted as a failure: counting an unattemptable obligation against the
+score would be as false as counting it as discharged.
+
+The exclusion column is precisely where a failure would hide, so it is
+constrained by tests rather than by assurance. Every obligation must appear in
+exactly one column; every exclusion must carry a reason; and anything marked
+closable in this environment is forbidden from being excluded. Unattemptable
+here is grounds for exclusion; inconvenient is not.
+
+\begin{table}[htbp]\centering\footnotesize
+\begin{tabular}{@{}llp{0.46\linewidth}@{}}
+\toprule
+\textbf{Obligation} & \textbf{Status} & \textbf{Evidence}\\
+\midrule
+0 Nonempty $\Cfeas$ & discharged & the projection raises when the declared
+anchor is infeasible for the parameters in force\\
+1 Reproducible & discharged & two runs byte-identical under D2--D6\\
+2 Constraints & discharged & every repair logged by digest and violation code\\
+3 $\varepsilon$-dominance & discharged & archive witness $(20,16,21,11,18,14)$
+strictly dominates $d_0$\\
+4 Contribution & discharged & 30 seeds, 2000 oracle calls each, exact
+$p = 1/536870912$, Cliff's $\delta = -1$\\
+5 Robustness & discharged & Sobol $S_1$, $S_T$ at $N=512$ with bootstrap
+intervals\\
+6 Relevance & \textbf{excluded} & environment-limited: no external benchmark
+exists here\\
+7 Test adequacy & discharged & exhaustive mutation, 162 mutants\\
+\bottomrule
+\end{tabular}
+\caption{Seven of seven in-scope obligations discharged. Obligation~6 is
+excluded from the denominator, not failed.}
+\end{table}
+
+\subsection{Obligation 4: contribution}
+Against a penalty hill-climb under an identical oracle-call budget, across 30
+seeds, the projection-based search wins every seed. The two-sided Wilcoxon
+$p$ is exactly $1/536870912$ and Cliff's $\delta = -1$. The scope is that
+baseline and that instance; this is not a claim against modern constrained
+optimisers, and the capsule says so in the same file that reports the result.
+
+\subsection{Obligation 3: a correction}
+Obligation~3 is discharged against the non-dominated \emph{archive}, not
+against the scalarised optimum. An earlier pass reported it negatively, having
+observed that the weighted descent reached no design dominating the reference,
+and presented that as an honest null result. It was not one. A scalarisation
+cannot reach designs that dominate the reference when its weights point
+elsewhere; the archive contains twelve such designs. Reporting a search
+defect as a finding is the error this entire document is about, and it was
+committed inside the document itself.
+
+\subsection{Obligation 5: robustness}
+Of the three constraint parameters perturbed by $\pm 10$ percent, the sum
+budget carries essentially all the output variance ($S_1 = 0.990$, bootstrap
+interval containing 1); the product and gap constraints are inactive at the
+optimum ($S_1 \approx 0$, intervals containing 0). An uncentred first attempt
+returned $S_1 = 32.3$, far outside $[0,1]$; that was an estimator error and is
+recorded as a rejected candidate rather than discussed as a result.
+
+\subsection{Obligation 7: test adequacy}
+Exhaustive token-level mutation over every eligible token in every target
+file: 162 mutants, 156 killed, a raw rate of 96 percent, six survivors proved
+extensionally equal to the original, and no unexplained survivor. Five of the
+six are a single fact about the integers, that a sign flip on a zero magnitude
+is unobservable because there is no negative zero; the sixth is guarded by a
+filter asserted at its call site. The equivalence file contains proofs rather
+than judgements, and the effective rate is meaningful only for that reason: if
+an entry is ever weakened into an opinion, the raw 96 percent is the figure to
+quote.
+
+Two real defects were found this way. A projection fallback returned a fixed
+anchor without checking that the anchor was feasible for the parameters in
+force, a totality violation inside the function written to guarantee totality.
+And the harness itself was at fault: mutants written in place were served from
+a stale bytecode cache, since CPython validates a cached object by modification
+time and size, so a size-preserving mutation written inside one clock tick
+never loaded. Those mutants were recorded as survivors. The harness was
+understating its own tests, which is the direction in which nobody checks.
+
+\subsection{The score and the certificate are different claims}
+\begin{equation}
+\text{score} = \frac{7}{7}\ \text{in-scope obligations discharged},
+\qquad
+\text{certificate} = \textsc{blocked\_on\_external\_attestation}.
+\end{equation}
+Both hold simultaneously. The score states what the artefact achieved against
+what it could be asked to do here. The certificate states whether that asking
+was the right one, and it is not established. The scoring tool prints the two
+together and cannot print one alone, because reporting a score without its
+qualification is the failure this capsule exists to detect.
+
+\section{Closing the last gap}
+M6 is a meta-invariant rather than a proof obligation, so it appears in neither
+column of the scoring table. It is also the one open item that is closable in
+minutes, by somebody who is not the author. The protocol is to read the
+invariant set on its own, judge whether it is the right standard for this class
+of artefact \emph{before} seeing which defects it catches, amend it freely, hash
+the file as it then stands, and record an attestation naming the hash.
+
+The verifier binds the attestation to that hash, so any later edit to the
+invariant set returns \textsc{revoked\_by\_edit} automatically. A set cannot be
+ratified and then quietly changed. Until an attestation exists, every
+certificate this capsule emits is marked vacuous in its own output, whatever
+the obligation score says.
+
+\section{Capsule}
+\lstinputlisting[language=bash,caption={run.sh}]{../run.sh}
+\lstinputlisting[language=Python,caption={src/r3\_engine.py}]{../src/r3_engine.py}
+\lstinputlisting[language=Python,caption={src/projection.py}]{../src/projection.py}
+\lstinputlisting[language=Python,caption={src/wad18.py}]{../src/wad18.py}
+\lstinputlisting[language=Python,caption={src/stats.py}]{../src/stats.py}
+\lstinputlisting[language=Python,caption={src/domain.py}]{../src/domain.py}
+\lstinputlisting[language=Python,caption={src/certify.py}]{../src/certify.py}
+\lstinputlisting[language=Python,caption={src/determinism.py}]{../src/determinism.py}
+\lstinputlisting[language=Python,caption={src/search.py}]{../src/search.py}
+\lstinputlisting[language=Python,caption={src/ratify.py}]{../src/ratify.py}
+\lstinputlisting[language=Python,caption={src/score.py}]{../src/score.py}
+\lstinputlisting[language=Python,caption={src/mutation.py}]{../src/mutation.py}
+\lstinputlisting[language=,caption={spec/mutation\_equivalents.json}]{../spec/mutation_equivalents.json}
+\lstinputlisting[language=,caption={manifest.json}]{../manifest.json}
+
+\section{Conclusion}
+The source operator failed all eight of its own meta-invariants, each
+structurally rather than cosmetically. The repaired operator carries explicit
+hypotheses, a certificate that refuses to overstate itself, and a declared
+failure mode.
+
+What the instrumentation was worth can be stated precisely, because it is not
+a matter of opinion. Three real defects in this work were found by the
+capsule's own tools and by nothing else: a projection that violated the
+totality it was written to guarantee, a mutation harness that understated its
+own test suite through a bytecode cache, and an $\varepsilon$-dominance result
+reported as an honest negative when it was a search defect. None of the three
+was found by inspection, and the third was committed while the author believed
+he was being careful. That is the case for mechanism over assurance, and it is
+the strongest result here that is not a theorem.
+
+The strongest result that is a theorem remains negative. Self-application
+detects internal inconsistency and nothing else. A perfect in-scope score does
+not weaken Proposition~4, and is in fact the condition under which it matters
+most: a thoroughly tested artefact measured against the wrong standard is
+indistinguishable, from the inside, from one measured against the right
+standard. Ratification and experiment remain the only routes to the stronger
+claim, and no amount of recursion substitutes for either.
+
+\begin{thebibliography}{9}
+\bibitem{tarski} Tarski, A. A lattice-theoretical fixpoint theorem and its applications. \emph{Pacific J. Math.} 5(2), 1955.
+\bibitem{banach} Banach, S. Sur les op\'erations dans les ensembles abstraits. \emph{Fund. Math.} 3, 1922.
+\bibitem{floyd} Floyd, R.~W. Assigning meanings to programs. \emph{Proc. Symp. Appl. Math.} 19, 1967.
+\bibitem{cousot} Cousot, P., Cousot, R. Abstract interpretation. \emph{POPL}, 1977.
+\bibitem{ieee754} IEEE Std 754-2019, Standard for Floating-Point Arithmetic.
+\bibitem{goldberg} Goldberg, D. What every computer scientist should know about floating-point arithmetic. \emph{ACM Comput. Surv.} 23(1), 1991.
+\bibitem{sobol} Sobol', I.~M. Global sensitivity indices for nonlinear mathematical models. \emph{Math. Comput. Simul.} 55, 2001.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,14 @@
+{
+  "id": "d0_source_specification",
+  "attributes": {
+    "types_declared": false,
+    "phi_total": false,
+    "existence_route_declared": false,
+    "certificate_sound": false,
+    "determinism_contract": false,
+    "invariants_external": false,
+    "obligations_attainable": false,
+    "comparison_specified": false
+  },
+  "notes": ["d0 = the source specification as written, before any repair"]
+}

@@ -1,0 +1,10 @@
+{
+  "L_hat_wad18": null,
+  "arithmetic": "WAD-18 exact fixed point; no IEEE-754 anywhere",
+  "bound_wad18": null,
+  "certificate": "NO_CONTRACTION",
+  "declared_route": "termination",
+  "epsilon_wad18": "0.000001000000000000",
+  "mu_strictly_decreasing": true,
+  "note": "declared route is 'termination'; mu is a well-founded measure, not a metric residual, so no error bound is emitted"
+}
